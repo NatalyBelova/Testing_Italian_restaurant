@@ -33,6 +33,7 @@ def test_contact_information():
     time.sleep(2)
     driver.quit()
 
+
 """Проверка мессенджеров"""
 @allure.description("Test Check Messendger")
 def test_check_messendger():

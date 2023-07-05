@@ -31,7 +31,6 @@ class Main_page(Base):
     book_button = "//button[@class='book-table']"
     language_english_button = "/html/body/div[2]/section/div[2]/div[1]/div[1]/a"
     language_russian_button = "//a[@class='rus']"
-
     date = "//input[@type='date']"
     time = "//input[@type='time']"
     phone_number = "//input[@placeholder='+7-999-999-99-99']"
@@ -132,11 +131,9 @@ class Main_page(Base):
 
 
 
-
-
     """Methods"""
 
-    """Метод проверки работы все разделов меню"""
+    """Проверка работы все разделов меню"""
     def sections(self):
         with allure.step("Select Sections"):
             Logger.add_start_step(method='select_sections')
@@ -166,7 +163,7 @@ class Main_page(Base):
             Logger.add_end_step(url=self.driver.current_url, method='select_sections')
 
 
-    """Метод проверки смены языка"""
+    """Проверка смены языка"""
     def change_language(self):
         with allure.step("Select Change Language"):
             Logger.add_start_step(method='change_language')
@@ -231,7 +228,7 @@ class Main_page(Base):
             Logger.add_end_step(url=self.driver.current_url, method='select_menu')
 
 
-    """Выбор кнопки Забронируйте столик"""
+    """Проверка возможности Бронирования столика"""
     def select_book(self):
         with allure.step("Select Book"):
             Logger.add_start_step(method='select_book')

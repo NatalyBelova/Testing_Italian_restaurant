@@ -28,7 +28,7 @@ class Contacts_page(Base):
     contact = "//*[@id='footer']/div/div/div/div[3]/p[2]"
     messenger_facebook = "//*[@id='footer']/div/div/div/div[4]/a[1]"
     messenger_instagram = "//*[@id='footer']/div/div/div/div[4]/a[2]"
-    messenger_twitter= "//*[@id='footer']/div/div/div/div[4]"
+    messenger_twitter = "//*[@id='footer']/div/div/div/div[4]"
 
 
 
@@ -89,7 +89,7 @@ class Contacts_page(Base):
 
     """Methods"""
 
-    """Отправляем email для подписки"""
+    """Проверка отправки email для подписки на обновления"""
 
     def send_email(self):
         with allure.step("Send Email"):
@@ -101,6 +101,8 @@ class Contacts_page(Base):
             self.click_send_button()
             Logger.add_end_step(url=self.driver.current_url, method='send_email')
 
+
+    """Проверка контактной информации"""
     def check_information(self):
         with allure.step("Check Information"):
             Logger.add_start_step(method='check_information')
@@ -109,6 +111,8 @@ class Contacts_page(Base):
             self.assert_word(self.get_contact(), "+7911-176-83-69\nlalal@mail.ru")
             Logger.add_end_step(url=self.driver.current_url, method='check_information')
 
+
+    """Проверка доступности мессенджеров"""
     def check_messendger(self):
         with allure.step("Check Messendger"):
             Logger.add_start_step(method='check_messendger')

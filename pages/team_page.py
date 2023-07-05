@@ -17,7 +17,7 @@ class Team_page(Base):
 
     """Locators"""
 
-    value_team = "//*[@id='section-2']/div/div/div"
+    value_team = "//*[@id='section-4']/div/div/div"
 
 
     """Getters"""
@@ -35,7 +35,7 @@ class Team_page(Base):
     def team(self):
         with allure.step("Team"):
             Logger.add_start_step(method='team')
-            self.assert_word(self.get_value_team(), " Наша команда - дружные во всех отношениях ребята. Проффессионалы своего дела. Вдохновленные Италией, мы готовы погрузить Вас в атмосферу раземероенного, солнечного и вкусного итальянского быта!")
+            self.assert_word(self.get_value_team(), "Наша команда - дружные во всех отношениях ребята. Проффессионалы своего дела. Вдохновленные Италией, мы готовы погрузить Вас в атмосферу раземероенного, солнечного и вкусного итальянского быта!")
             self.assert_url("https://mr-usackiy.github.io/amici-D-italia/index.html#section-4")
             Logger.add_end_step(url=self.driver.current_url, method='team')
 

@@ -24,7 +24,6 @@ class Menu_page(Base):
     snacks = "//div[@class='card-7 card delay--3s cards_animation--0-7']"
     dessert = "//div[@class='card-2 card delay--1s cards_animation--0-7']"
     pizza = "//div[@class='card-3 card delay--05s cards_animation--0-7']"
-
     button_close_1 = "//*[@id='menu__2']/div[2]/div[1]/a"
     button_arrow_1 = "//img[@class='next6']"
     button_close_2 = "//*[@id='menu__2']/div[7]/div[1]/a"
@@ -90,7 +89,6 @@ class Menu_page(Base):
 
     def get_button_arrow_4(self):
         return WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.XPATH, self.button_arrow_4)))
-
 
     def get_button_close_7(self):
         return WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.XPATH, self.button_close_7)))
@@ -172,9 +170,10 @@ class Menu_page(Base):
         print("CLick Button Close_7")
 
 
+
     """Methods"""
 
-    """Переходим на главную страницу со страницы личного кабинета пользователя"""
+    """Проверка просмотра всего меню"""
     def select_dishes(self):
         with allure.step("Select Dishes"):
             Logger.add_start_step(method='select_dishes')
