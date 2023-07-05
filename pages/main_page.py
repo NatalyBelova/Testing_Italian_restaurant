@@ -274,14 +274,5 @@ class Main_page(Base):
             self.click_language_russian_button()
             Logger.add_end_step(url=self.driver.current_url, method='select_language_russian')
 
-    """Смена размера дисплея"""
-    # def select_display(self):
-    #     with allure.step("Select Language Russian"):
-    #         Logger.add_start_step(method='select_language_russian')
-    #         self.driver.get(self.url)  # Метод, который открывает нашу url
-    #         # self.driver.maximize_window()
-    #
-    #         self.driver.execute_script("window.scrollTo(0, 5000)")
-    #         self.get_screenshot()
-    #         Logger.add_end_step(url=self.driver.current_url, method='select_language_russian')
+
 
